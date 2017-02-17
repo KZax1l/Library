@@ -107,6 +107,9 @@ public final class SingleRequest<R> implements Request,
     private int overrideHeight;
     private Priority priority;
     private Target<R> target;
+    /**
+     * 这个需要用户在相应界面进行实现
+     */
     private RequestListener<R> requestListener;
     private Engine engine;
     /**
@@ -251,6 +254,10 @@ public final class SingleRequest<R> implements Request,
         }
 
         status = Status.WAITING_FOR_SIZE;
+        /**
+         * 若宽高值不符合规范，则使用控件的宽高值
+         * @see com.bumptech.glide.request.target.ViewTarget.SizeDeterminer#getSize(SizeReadyCallback)
+         */
         if (Util.isValidDimensions(overrideWidth, overrideHeight)) {
             onSizeReady(overrideWidth, overrideHeight);
         } else {
