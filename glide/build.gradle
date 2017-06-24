@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME as String
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -26,8 +26,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:appcompat-v7:${SUPPORT_V7_VERSION}"
-    compile "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
-    testCompile 'junit:junit:4.12'
+    provided "com.android.support:appcompat-v7:${SUPPORT_V7_VERSION}"
+    provided "com.android.support:recyclerview-v7:${SUPPORT_V7_VERSION}"
+    provided "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
+    testCompile "junit:junit:${JUNIT_VERSION}"
     compile project(':annotation')
 }
