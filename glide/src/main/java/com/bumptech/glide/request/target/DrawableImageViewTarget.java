@@ -6,17 +6,15 @@ import android.widget.ImageView;
 
 /**
  * A target for display {@link Drawable} objects in {@link ImageView}s.
- * <p>
- * 展示一个{@link Drawable}对象到{@link ImageView}
  */
 public class DrawableImageViewTarget extends ImageViewTarget<Drawable> {
 
-    public DrawableImageViewTarget(ImageView view) {
-        super(view);
-    }
+  public DrawableImageViewTarget(ImageView view) {
+    super(view);
+  }
 
-    @Override
-    protected void setResource(@Nullable Drawable resource) {
-        view.setImageDrawable(resource);
-    }
+  @Override
+  protected void setResource(@Nullable Drawable resource) {
+    view.setImageDrawable(resource);
+  }
 }
