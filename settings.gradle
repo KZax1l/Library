@@ -1,1 +1,1 @@
-include ':okio', ':app', ':okhttp-parent-3.7.0'
+include ':okio', ':app', ':okhttp-parent-3.7.0', ':retrofit-parent-2.2.0'
